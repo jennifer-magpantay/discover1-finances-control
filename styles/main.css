@@ -1,0 +1,219 @@
+/* source: https://piccalil.li/blog/a-modern-css-reset */
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Roboto&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed 
+Ps.: for this, the ul/ol has to be set as <ul role="list"> or <ol role="list"> - this is part of 
+*/
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* font is a shorthand for the properies: font-family, font-weight, font-strech, font-variant, font-size */
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: auto;
+}
+
+body {
+  background-color: #f5f6fa;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  padding: 0 8.66%;
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+h1 {
+  font-size: clamp(2.4rem, 3.1vw, 3.1rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 2.4vw, 2.4rem);
+}
+
+h1,
+h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+  font-weight: 300;
+}
+
+p,
+button,
+input {
+  color: #282828;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+}
+
+header {
+  padding: 01em 8.66%;
+}
+
+header h1 {
+  display: block;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #bdc3c7;
+  color: #1289A7;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 1em;
+}
+
+section h2 {
+  display: block;
+  margin: 0.5em 8.66%;
+  padding-left: 0.5em;
+  background-color: #1289A7;
+  color: #f5f6fa;
+}
+
+.cashflow .primary {
+  background-color: #1289A7;
+}
+
+.cashflow .primary h3 {
+  color: #f5f6fa;
+}
+
+.transactions .card {
+  background-color: #fff;
+}
+
+.card {
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 600px) {
+  .card {
+    width: calc(100% / 3.1);
+  }
+}
+
+.card__title {
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #bdc3c7;
+  color: #1289A7;
+  text-align: center;
+}
+
+.card input[type="number"],
+.card input[type="date"],
+.card select {
+  width: 100%;
+  padding: 0.25em;
+  border: 1px solid #bdc3c7;
+}
+/*# sourceMappingURL=main.css.map */

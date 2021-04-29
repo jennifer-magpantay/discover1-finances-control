@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Finances Control</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <h1>Finances Control</h1>
+    </header>
+    <!-- main -->
+    <main>
+        <section class="cashflow">
+            <h2>Cash Flow</h2>
+            <!-- cards -->
+            <div class="container">
+                <div class="card">
+                    <h3 class="card__title">Income</h3>
+                    <input type="number" name="income" id="income">
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">Outflows</h3>
+                    <input type="number" name="outflows" id="outflows">
+                </div>
+
+                <div class="card primary">
+                    <h3 class="card__title">Balance</h3>
+                    <input type="number" name="balance" id="balance" readonly>
+                </div>
+            </div>
+        </section>
+
+        <!-- transactions -->
+        <section class="transactions">
+            <h2>Transactions</h2>
+            <div class="container">
+                <div class="card">
+                    <h3 class="card__title">Description</h3>
+                    <select name="transDescription" id="transDescription"></select>
+
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">Value</h3>
+                    <input type="number" name="transValue" id="transValue">
+                </div>
+
+                <div class="card">
+                    <h3 class="card__title">Date</h3>
+                    <input type="date" name="transDate" id="transDate">
+                </div>
+            </div>
+
+            <!-- historic -->
+            <h2>Historic of transactions</h2>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <!-- scripts -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

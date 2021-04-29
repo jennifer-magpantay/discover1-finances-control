@@ -1,0 +1,26 @@
+.card {
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: $box-shadow;
+
+  @include mobile {
+    width: calc(100% / 3.1);
+  }
+
+  &__title {
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $color-gray;
+    color: $color-primary;
+    text-align: center;
+  }
+
+  input[type="number"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 0.25em;
+    border: 01px solid $color-gray;
+  }
+}

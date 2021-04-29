@@ -1,0 +1,22 @@
+// queries following mobile first
+
+$mobile: 600px;
+@mixin mobile {
+  @media (min-width: #{$mobile}){
+    @content;
+  }
+}
+
+$tablet: 768px;
+@mixin tablet {
+  @media (min-width: #{$tablet}){
+    @content;
+  }
+}
+
+$laptop: 1024px;
+@mixin laptop {
+  @media (min-width: #{$laptop}){
+    @content;
+  }
+}

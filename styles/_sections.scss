@@ -1,0 +1,26 @@
+section {
+  margin-bottom: 1em;
+  h2 {
+    display: block;
+    margin: 0.5em 8.66%;
+    padding-left: 0.5em;
+    background-color: $color-primary;
+    color: $color-bc;
+  }
+}
+
+.cashflow {
+  .primary {
+    background-color: $color-primary;
+    h3 {
+      color: $color-bc;
+    }
+  }
+}
+
+.transactions {
+  .card {
+    background-color: #fff;
+    // border: 1px solid $color-gray;
+  }
+}

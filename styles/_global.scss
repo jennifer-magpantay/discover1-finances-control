@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: auto;
+}
+
+body {
+  background-color: $color-bc;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  padding: 0 8.66%;
+
+  @include mobile {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+
