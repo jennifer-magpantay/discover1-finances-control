@@ -1,6 +1,7 @@
 // 1 - Helpers
 @import './reset';
 @import './variables';
+@import './mixins';
 @import './responsive';
 
 // 2 - Tools
@@ -12,4 +13,5 @@
 @import './header';
 @import './sections';
 @import './cards';
+@import './modal';
 // 6 - Pages

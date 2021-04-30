@@ -13,14 +13,34 @@
     padding-bottom: 0.5em;
     border-bottom: 1px solid $color-gray;
     color: $color-primary;
-    text-align: center;
+    // text-align: center;
   }
 
-  input[type="number"],
-  input[type="date"],
-  select {
+   &__result {
     width: 100%;
     padding: 0.25em;
+    background-color: #fff;
     border: 01px solid $color-gray;
+    cursor: pointer;
+
+    span {
+      padding-left: 0.25em;
+    }
+  }
+
+  .income::before {
+    @include icons;
+    content: "\f0aa";
+  }
+
+  .outflow::before {
+    @include icons;
+    content: "\f0ab";
+    color: $color-error;
+  }
+
+  .balance::before {
+    @include icons;
+    content: "\f155";
   }
 }

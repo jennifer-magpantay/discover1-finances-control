@@ -23,7 +23,8 @@ h3 {
 
 p,
 button,
-input {
+input,
+span,label {
   color: $color-text;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: clamp(1.4rem, 1.6vw, 1.6rem);

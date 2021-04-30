@@ -1,15 +1,27 @@
 section {
   margin-bottom: 1em;
-  h2 {
+  padding: 0 8.66%;
+
+  .section__title {
     display: block;
-    margin: 0.5em 8.66%;
+    margin: 0.5em 0;
     padding-left: 0.5em;
     background-color: $color-primary;
     color: $color-bc;
+
+    &::before {
+      @include icons;
+      color: inherit;
+      font-size: inherit;
+    }
   }
 }
 
 .cashflow {
+  .section__title::before {
+    content: "\f53d";
+  }
+
   .primary {
     background-color: $color-primary;
     h3 {
@@ -19,8 +31,40 @@ section {
 }
 
 .transactions {
+  .section__title::before {
+    content: "\f362";
+  }
+
+  .add {
+    padding-bottom: 1em;
+    cursor: pointer;
+
+    &::before {
+      @include icons;
+      content: "\f055";
+      font-size: inherit;
+    }
+
+    &:focus,
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__container {
+    display: flex;
+    padding: 1em;
+    background-color: #fff;
+  }
+  p {
+    width: calc(100% / 3);
+    display: block;
+    padding-left: 0.5em;
+  }
+
   .card {
     background-color: #fff;
     // border: 1px solid $color-gray;
   }
 }
+

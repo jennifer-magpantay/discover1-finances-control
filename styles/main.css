@@ -104,8 +104,15 @@ ol {
   list-style: none;
 }
 
-.container {
-  padding: 0 8.66%;
+input[type="number"],
+input[type="date"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 0.25em;
+  background-color: #fff;
+  border: 1px solid #bdc3c7;
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {
@@ -144,7 +151,8 @@ h3 {
 
 p,
 button,
-input {
+input,
+span, label {
   color: #282828;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: clamp(1.4rem, 1.6vw, 1.6rem);
@@ -165,14 +173,33 @@ header h1 {
 
 section {
   margin-bottom: 1em;
+  padding: 0 8.66%;
 }
 
-section h2 {
+section .section__title {
   display: block;
-  margin: 0.5em 8.66%;
+  margin: 0.5em 0;
   padding-left: 0.5em;
   background-color: #1289A7;
   color: #f5f6fa;
+}
+
+section .section__title::before {
+  display: inline-block;
+  padding-right: 0.5em;
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: inherit;
+  font-size: inherit;
+}
+
+.cashflow .section__title::before {
+  content: "\f53d";
 }
 
 .cashflow .primary {
@@ -181,6 +208,47 @@ section h2 {
 
 .cashflow .primary h3 {
   color: #f5f6fa;
+}
+
+.transactions .section__title::before {
+  content: "\f362";
+}
+
+.transactions .add {
+  padding-bottom: 1em;
+  cursor: pointer;
+}
+
+.transactions .add::before {
+  display: inline-block;
+  padding-right: 0.5em;
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "\f055";
+  font-size: inherit;
+}
+
+.transactions .add:focus, .transactions .add:hover {
+  color: #1289A7;
+}
+
+.transactions__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1em;
+  background-color: #fff;
+}
+
+.transactions p {
+  width: calc(100% / 3);
+  display: block;
+  padding-left: 0.5em;
 }
 
 .transactions .card {
@@ -206,14 +274,146 @@ section h2 {
   padding-bottom: 0.5em;
   border-bottom: 1px solid #bdc3c7;
   color: #1289A7;
+}
+
+.card__result {
+  width: 100%;
+  padding: 0.25em;
+  background-color: #fff;
+  border: 1px solid #bdc3c7;
+  cursor: pointer;
+}
+
+.card__result span {
+  padding-left: 0.25em;
+}
+
+.card .income::before {
+  display: inline-block;
+  padding-right: 0.5em;
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "\f0aa";
+}
+
+.card .outflow::before {
+  display: inline-block;
+  padding-right: 0.5em;
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "\f0ab";
+  color: #e84118;
+}
+
+.card .balance::before {
+  display: inline-block;
+  padding-right: 0.5em;
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "\f155";
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  width: clamp(400px, 50vw, 50rem);
+  padding: 2em;
+  background-color: #f5f6fa;
+  -webkit-box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.25);
+}
+
+.modal__title {
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #bdc3c7;
   text-align: center;
 }
 
-.card input[type="number"],
-.card input[type="date"],
-.card select {
+.form__container .row {
   width: 100%;
-  padding: 0.25em;
-  border: 1px solid #bdc3c7;
+  margin-bottom: 1em;
+}
+
+.form__container .row label {
+  display: block;
+}
+
+.form__container .buttons__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__container .buttons__container button {
+  width: 48%;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.form__container .buttons__container .cancel {
+  background-color: transparent;
+  color: #1289A7;
+  border: 1px solid #1289A7;
+}
+
+.form__container .buttons__container .cancel:hover, .form__container .buttons__container .cancel:focus {
+  color: #0b5062;
+  border-color: #0b5062;
+}
+
+.form__container .buttons__container .add {
+  background-color: #1289A7;
+  color: #f5f6fa;
+  border: 1px solid #1289A7;
+}
+
+.form__container .buttons__container .add:hover, .form__container .buttons__container .add:focus {
+  background-color: #0b5062;
 }
 /*# sourceMappingURL=main.css.map */

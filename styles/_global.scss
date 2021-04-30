@@ -15,19 +15,29 @@ body {
   background-color: $color-bc;
 }
 
+// lists
 ul,
 ol {
   list-style: none;
 }
 
-.container {
-  padding: 0 8.66%;
+// inputs
+input[type="number"],
+input[type="date"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 0.25em;
+  background-color: #fff;
+  border: 01px solid $color-gray;
+  cursor: pointer;
+}
 
+// classes
+.container {
   @include mobile {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
   }
 }
-
-

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- style -->
     <link rel="stylesheet" href="./styles/main.css">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/b7fbddd43a.js" crossorigin="anonymous"></script>
     <title>Finances Control</title>
 </head>
 
@@ -15,54 +17,75 @@
     <header>
         <h1>Finances Control</h1>
     </header>
+
     <!-- main -->
     <main>
         <section class="cashflow">
-            <h2>Cash Flow</h2>
+            <h2 class="section__title">Cash Flow</h2>
             <!-- cards -->
             <div class="container">
                 <div class="card">
-                    <h3 class="card__title">Income</h3>
+                    <h3 class="card__title income">Income</h3>
                     <input type="number" name="income" id="income">
                 </div>
 
                 <div class="card">
-                    <h3 class="card__title">Outflows</h3>
-                    <input type="number" name="outflows" id="outflows">
+                    <h3 class="card__title outflow">Outflows</h3>
+                    <p class="card__result">R$<span>00.00</span></p>
+                    <!-- <input type="number" name="outflows" id="outflows" readonly> -->
                 </div>
 
                 <div class="card primary">
-                    <h3 class="card__title">Balance</h3>
-                    <input type="number" name="balance" id="balance" readonly>
+                    <h3 class="card__title balance">Balance</h3>
+                    <p class="card__result">R$<span>00.00</span></p>
+                    <!-- <input type="number" name="balance" id="balance" readonly> -->
                 </div>
             </div>
         </section>
 
         <!-- transactions -->
         <section class="transactions">
-            <h2>Transactions</h2>
-            <div class="container">
-                <div class="card">
-                    <h3 class="card__title">Description</h3>
-                    <select name="transDescription" id="transDescription"></select>
-
-                </div>
-
-                <div class="card">
-                    <h3 class="card__title">Value</h3>
-                    <input type="number" name="transValue" id="transValue">
-                </div>
-
-                <div class="card">
-                    <h3 class="card__title">Date</h3>
-                    <input type="date" name="transDate" id="transDate">
-                </div>
+            <h2 class="section__title">Transactions</h2>
+            <!-- add a new transactions -->
+            <p class="add">Add new transaction</p>
+            <div class="transactions__container">
+                <p class="transactions__description">Description</p>
+                <p class="transactions__value">Value</p>
+                <p class="transactions__date">Date</p>
             </div>
-
-            <!-- historic -->
-            <h2>Historic of transactions</h2>
         </section>
     </main>
+
+    <!-- modal -->
+    <div class="overlay active">
+        <div class="modal">
+            <h2 class="modal__title">Add new transaction</h2>
+            <!-- form -->
+            <div class="form__container">
+                <form action="">
+                    <div class="row">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description"></select>
+                    </div>
+
+                    <div class="row">
+                        <label for="value">Value</label>
+                        <input type="number" name="value" id="value" step="0.01" placeholder="0.00">
+                    </div>
+
+                    <div class="row">
+                        <label for="date">Date</label>
+                        <input type="date" name="date" id="date">
+                    </div>
+                    <div class="buttons__container">
+                        <button type="button" class="cancel">CANCEL</button>
+                        <button type="button" class="add">ADD</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- footer -->
     <!-- scripts -->
