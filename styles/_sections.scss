@@ -1,3 +1,4 @@
+// global styles for section
 section {
   margin-bottom: 1em;
   padding: 0 8.66%;
@@ -17,6 +18,7 @@ section {
   }
 }
 
+// cashflow control cards
 .cashflow {
   .section__title::before {
     content: "\f53d";
@@ -30,13 +32,19 @@ section {
   }
 }
 
+// transactions list
 .transactions {
   .section__title::before {
     content: "\f362";
   }
 
-  .add {
-    padding-bottom: 1em;
+  .button-add {
+    @include buttons;
+    width: auto;
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    background-color: transparent;
+    border: 1px solid $color-gray;
     cursor: pointer;
 
     &::before {
@@ -47,24 +55,55 @@ section {
 
     &:focus,
     &:hover {
+      border-color: $color-primary;
       color: $color-primary;
     }
   }
 
   &__container {
     display: flex;
+    align-items: center;
     padding: 1em;
+    margin-bottom: 0.5em;
     background-color: #fff;
-  }
-  p {
-    width: calc(100% / 3);
-    display: block;
-    padding-left: 0.5em;
+    transition: all 0.5s ease;
+
+    .expense-value {
+      color: $color-error;
+    }
+
+    .income-value{
+      color: $color-text;
+    }
+
+    p {
+      width: calc(100% / 3);
+      display: block;
+      padding-left: 0.5em;
+    }
   }
 
-  .card {
-    background-color: #fff;
-    // border: 1px solid $color-gray;
+  &__container:first-child:hover, &__container:first-child:focus {
+    cursor: pointer;
+    box-shadow: $box-shadow;
+    transform: scale(1.01);
+  }
+
+  .button-delete {
+    @include buttons;
+    width: auto;
+    padding: 0.25em 0.75em;
+    background-color: transparent;
+    border: 2px solid $color-error;
+    border-radius: 100%;
+    color: $color-error;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      background-color: $color-error;
+      color: $color-bc;
+    }
   }
 }
-

@@ -214,12 +214,21 @@ section .section__title::before {
   content: "\f362";
 }
 
-.transactions .add {
-  padding-bottom: 1em;
+.transactions .button-add {
+  width: 48%;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: auto;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  background-color: transparent;
+  border: 1px solid #bdc3c7;
   cursor: pointer;
 }
 
-.transactions .add::before {
+.transactions .button-add::before {
   display: inline-block;
   padding-right: 0.5em;
   font-family: "Font Awesome 5 Free";
@@ -233,7 +242,8 @@ section .section__title::before {
   font-size: inherit;
 }
 
-.transactions .add:focus, .transactions .add:hover {
+.transactions .button-add:focus, .transactions .button-add:hover {
+  border-color: #1289A7;
   color: #1289A7;
 }
 
@@ -241,18 +251,57 @@ section .section__title::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 1em;
+  margin-bottom: 0.5em;
   background-color: #fff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-.transactions p {
+.transactions__container .expense-value {
+  color: #e84118;
+}
+
+.transactions__container .income-value {
+  color: #282828;
+}
+
+.transactions__container p {
   width: calc(100% / 3);
   display: block;
   padding-left: 0.5em;
 }
 
-.transactions .card {
-  background-color: #fff;
+.transactions__container:first-child:hover, .transactions__container:first-child:focus {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.25);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.transactions .button-delete {
+  width: 48%;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: auto;
+  padding: 0.25em 0.75em;
+  background-color: transparent;
+  border: 2px solid #e84118;
+  border-radius: 100%;
+  color: #e84118;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.transactions .button-delete:hover, .transactions .button-delete:focus {
+  background-color: #e84118;
+  color: #f5f6fa;
 }
 
 .card {
@@ -345,7 +394,7 @@ section .section__title::before {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
 }
@@ -370,13 +419,52 @@ section .section__title::before {
   text-align: center;
 }
 
+.modal .button-close {
+  display: block;
+  margin-left: auto;
+  color: #bdc3c7;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.modal .button-close:hover, .modal .button-close:focus {
+  color: #e84118;
+}
+
+.modal .button-close::before {
+  display: inline-block;
+  padding-right: 0.5em;
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "\f057";
+  padding: 0;
+}
+
 .form__container .row {
   width: 100%;
   margin-bottom: 1em;
 }
 
-.form__container .row label {
-  display: block;
+.form__container .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__container .radio-group__container {
+  width: 45%;
 }
 
 .form__container .buttons__container {
@@ -396,24 +484,24 @@ section .section__title::before {
   transition: all 0.5s ease;
 }
 
-.form__container .buttons__container .cancel {
+.form__container .buttons__container .button-clear {
   background-color: transparent;
-  color: #1289A7;
-  border: 1px solid #1289A7;
+  color: #e84118;
+  border: 1px solid #e84118;
 }
 
-.form__container .buttons__container .cancel:hover, .form__container .buttons__container .cancel:focus {
-  color: #0b5062;
-  border-color: #0b5062;
+.form__container .buttons__container .button-clear:hover, .form__container .buttons__container .button-clear:focus {
+  color: #a32d10;
+  border-color: #a32d10;
 }
 
-.form__container .buttons__container .add {
+.form__container .buttons__container .button-save {
   background-color: #1289A7;
   color: #f5f6fa;
   border: 1px solid #1289A7;
 }
 
-.form__container .buttons__container .add:hover, .form__container .buttons__container .add:focus {
+.form__container .buttons__container .button-save:hover, .form__container .buttons__container .button-save:focus {
   background-color: #0b5062;
 }
 /*# sourceMappingURL=main.css.map */

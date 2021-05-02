@@ -9,7 +9,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
 }
@@ -31,18 +31,45 @@
     border-bottom: 1px solid $color-gray;
     text-align: center;
   }
+
+  .button-close {
+    display: block;
+    margin-left: auto;
+    color: $color-gray;
+    cursor: pointer;
+    transition: all 0.5s ease;  
+
+    &:hover,
+    &:focus {
+      // background-color: $color-error;
+      color: $color-error;
+    }
+  }
+
+  .button-close::before {
+    @include icons;
+    content: "\f057";
+    padding: 0;
+  }
 }
 
 .form__container {
   .row {
     width: 100%;
-    margin-bottom: 1em;
-
-    label {
-      display: block;
-    }
+    margin-bottom: 1em;  
   }
 
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .radio-group__container {
+    width: 45%;
+  }
+
+  
   .buttons__container {
     display: flex;
     justify-content: space-between;
@@ -51,19 +78,19 @@
       @include buttons;
     }
 
-    .cancel {
+    .button-clear {
       background-color: transparent;
-      color: $color-primary;
-      border: 1px solid $color-primary;
+      color: $color-error;
+      border: 1px solid $color-error;
 
       &:hover,
       &:focus {
-        color: darken($color-primary, 15%);
-        border-color: darken($color-primary, 15%);
+        color: darken($color-error, 15%);
+        border-color: darken($color-error, 15%);
       }
     }
 
-    .add {
+    .button-save {
       background-color: $color-primary;
       color: $color-bc;
       border: 1px solid $color-primary;
