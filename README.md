@@ -2,7 +2,7 @@
 
 ## Maratona Discover 1 - by RocketSeat
 
-Maratona Discover is a series of online tutorials from [RocketSeat](https://rocketseat.com.br/)that teach the Web Development foundation for beginners developers, helping them to build a solid knowledge for their career. 
+Maratona Discover is a series of online tutorials from [RocketSeat](https://rocketseat.com.br/) that teach Web Development foundations for beginners developers, helping them to build a solid knowledge for their career. 
 
 As part of the 1st edition, the challenge was to develop a desktop application to control your personal finances. A user should be able to register the amount o money they have earned and also, register all withdraws, generating a report about your transactions including dates, amounts and description of the transaction.
 
